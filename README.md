@@ -1,0 +1,2 @@
+cordova-network-information-ionic
+=================================
