@@ -20,7 +20,7 @@ cordova-network-information-ionic
 >
 
 7.Inject network services into networkCtrl controller<br>
-  inside NetworkCtrl module:
+    inside NetworkCtrl module:
 >angular.module('NetworkCtrl', [])
 >
 >    .controller('networkCtrl', function (networkService) {
