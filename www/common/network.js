@@ -26,7 +26,6 @@ var network = angular.module('NetworkInfo',[]);
 	       $cordovaNetwork.watchOffline();
 	       $cordovaNetwork.watchOnline();
 
-
 	      $rootScope.$on("networkOffline", function () {
 	        alert("iPad is now Offline!");
 	      });
