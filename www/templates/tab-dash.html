@@ -1,11 +1,12 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
     <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-divider">cordova-network-infromation-ionic</div>
       <div class="item item-body">
         <div>
-          {{connectionType}}
+          {{network.connectionType}}
       </div>
     </div>
+     <button ng-click="network.network()">Refresh</button>
   </ion-content>
 </ion-view>

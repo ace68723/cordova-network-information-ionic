@@ -5,34 +5,21 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
+angular.module('starter', [
+                            'ionic', 
+                            'ngCordova',
+                            'NetworkCtrl',
+                            'NetworkInfo'
+                              ])
 
-.run(function ($rootScope, $ionicPlatform, $cordovaNetwork, $cordovaBatteryStatus) {
-
-    $ionicPlatform.ready(function () {
+.run(function ($rootScope, $ionicPlatform) {
+  $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       }
       if (window.StatusBar) {
         StatusBar.styleDefault();
       }
-
-      $cordovaNetwork.watchOffline();
-      $cordovaNetwork.watchOnline();
-
-
-      $rootScope.$on("networkOffline", function () {
-        alert("Device is now Offline!");
-      });
-
-
-      $rootScope.$on("networkOnline", function () {
-        alert("Device is Online!");
-      });
-
-      $cordovaBatteryStatus.$on("batterystatus", function (status) {
-        alert("status :" + status);
-      })
     })
   })
 
@@ -58,55 +45,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'NetworkCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'networkCtrl as network'
       }
     }
   });

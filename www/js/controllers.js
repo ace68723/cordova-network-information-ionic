@@ -1,50 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('NetworkCtrl', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-.controller('NetworkCtrl', function ($scope, $cordovaNetwork) {
-    $scope.networkType = null;
-    $scope.connectionType = null;
-    console.log('NetworkCtrl loaded')
-
-    document.addEventListener("deviceready", function () {
-      $scope.networkType = $cordovaNetwork.getNetwork();
-
-      if ($cordovaNetwork.isOnline()) {
-        $scope.connectionType = 'Online';
-        console.log($scope.connectionType)
-      }
-      else if ($cordovaNetwork.isOffline()) {
-        $scope.connectionType = 'Offline';
-      }
-      else {
-        $scope.errorMsg = 'Error getting isOffline / isOnline methods';
-      }
-    }, false);
-
-
-  });
+.controller('networkCtrl', function (networkService) {
+    this.network = networkService.network
+    console.log(networkService.connectionType)
+});
