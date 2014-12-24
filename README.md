@@ -27,7 +27,5 @@ cordova-network-information-ionic
 >
 >          this.network = networkService.network
 >
->         console.log(networkService.connectionType)
->
 >    });
 
