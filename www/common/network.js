@@ -21,19 +21,19 @@ var network = angular.module('NetworkInfo',[]);
 
 	.run(function ($rootScope, $ionicPlatform, $cordovaNetwork) {
 
-    $ionicPlatform.ready(function () {
-      
-       $cordovaNetwork.watchOffline();
-       $cordovaNetwork.watchOnline();
+	    $ionicPlatform.ready(function () {
+	      
+	       $cordovaNetwork.watchOffline();
+	       $cordovaNetwork.watchOnline();
 
 
-      $rootScope.$on("networkOffline", function () {
-        alert("iPad is now Offline!");
-      });
+	      $rootScope.$on("networkOffline", function () {
+	        alert("iPad is now Offline!");
+	      });
 
 
-      $rootScope.$on("networkOnline", function () {
-        alert("iPad is Online!");
-      });
-    })
-});
+	      $rootScope.$on("networkOnline", function () {
+	        alert("iPad is Online!");
+	      });
+	    })
+	});
