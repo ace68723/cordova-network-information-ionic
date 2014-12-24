@@ -30,7 +30,7 @@ cordova-network-information-ionic
 >    });
 
 8.use "Controller as" syntax
->    .state('tab.dash', {
+       .state('tab.dash', {
 
                url: '/dash',
            
@@ -46,5 +46,5 @@ cordova-network-information-ionic
             
                 }
             
->  });
+        });
 
