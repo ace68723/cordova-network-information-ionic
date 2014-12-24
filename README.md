@@ -31,20 +31,20 @@ cordova-network-information-ionic
 
 8.use "Controller as" syntax
 >    .state('tab.dash', {
->
->    url: '/dash',
-> 
->    views: {
->
->      'tab-dash': {
->
->        templateUrl: 'templates/tab-dash.html',
->
->        controller: 'networkCtrl as network'
->
->      }
->
->    }
->
+
+               url: '/dash',
+           
+                views: {
+            
+                  'tab-dash': {
+            
+                    templateUrl: 'templates/tab-dash.html',
+            
+                    controller: 'networkCtrl as network'
+            
+                  }
+            
+                }
+            
 >  });
 
