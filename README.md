@@ -49,3 +49,6 @@ cordova-network-information-ionic
             
             });
 
+9.Ready to use
+inside xxx.html
+> <button ng-click="network.network()">Refresh</button>
