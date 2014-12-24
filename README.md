@@ -41,7 +41,7 @@ cordova-network-information-ionic
             
                     templateUrl: 'templates/tab-dash.html',
             
-                    controller: 'networkCtrl as network'
+                    controller: 'networkCtrl as networkCtrl'
             
                   }
             
@@ -50,5 +50,7 @@ cordova-network-information-ionic
             });
 
 9.Ready to use
-inside xxx.html
-> <button ng-click="network.network()">Refresh</button>
+> inside xxx.html<br>
+>
+>   ng-click="networkCtrl.network()"
+>
