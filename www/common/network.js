@@ -30,7 +30,6 @@ var network = angular.module('NetworkInfo',[]);
 	        alert("iPad is now Offline!");
 	      });
 
-
 	      $rootScope.$on("networkOnline", function () {
 	        alert("iPad is Online!");
 	      });
